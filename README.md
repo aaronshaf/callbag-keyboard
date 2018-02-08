@@ -9,8 +9,9 @@ const keyboard = require("callbag-keyboard");
 
 pipe(
   keyboard,
-  forEach(keyboardState => {
+  forEach(({ keysDown }) => {
     // have fun
+    // keysDown is a Set
   })
 );
 ```
@@ -19,7 +20,7 @@ If you're blessed with the [pipeline operator](https://github.com/tc39/proposal-
 
 ```javascript
 keyboard
-  |> forEach(keyboardState => {
+  |> forEach({ keysDown }) => {
     // have fun
   });
 ```
